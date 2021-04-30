@@ -5,6 +5,8 @@ public class ProductManager {
 	
 	public void addToCart(Product product) {
 		
-		System.out.println("Sepete Eklendi : " + product.name);
+		System.out.println("Sepete Eklendi : " + product.getName());
 	}
 }
+
+// artık okumak için get ifadesini kullanıyoruz.
