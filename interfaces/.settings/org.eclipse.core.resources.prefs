@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+encoding//src/interfaces/Customer.java=UTF-8
+encoding//src/interfaces/CustomerManager.java=UTF-8
+encoding//src/interfaces/DatabaseLogger.java=UTF-8
+encoding//src/interfaces/EmailLogger.java=UTF-8
+encoding//src/interfaces/FileLogger.java=UTF-8
+encoding//src/interfaces/Logger.java=UTF-8
+encoding//src/interfaces/SmsLogger.java=UTF-8
