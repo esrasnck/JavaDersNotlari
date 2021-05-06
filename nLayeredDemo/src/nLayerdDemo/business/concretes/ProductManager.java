@@ -3,18 +3,22 @@ package nLayerdDemo.business.concretes;
 import java.util.List;
 
 import nLayerdDemo.business.abstracts.ProductService;
+import nLayerdDemo.core.LoggerService;
 import nLayerdDemo.dataAccess.abstracts.ProductDao;
 import nLayerdDemo.dataAccess.concretes.HibernateProductDao;
 import nLayerdDemo.entities.concretes.Product;
+import nLayerdDemo.jLogger.JLoggerManager;
 
 public class ProductManager implements ProductService {
 
 	private ProductDao productDao; // manager hibernate'den asla haberdar degil. manager sadece kullanacagi interfaceinden haberdar.
 
+	private LoggerService loggerService;
 	
-	public ProductManager(ProductDao productDao) {  // asla hibernate'e bagimli degilsin. ama onun tutacagi referanslara baglisin.
+	public ProductManager(ProductDao productDao, LoggerService loggerService) {  // asla hibernate'e bagimli degilsin. ama onun tutacagi referanslara baglisin.
 		super();
 		this.productDao = productDao;
+		this.loggerService = loggerService;
 	}
 
 	@Override
@@ -28,7 +32,11 @@ public class ProductManager implements ProductService {
 		}
 		// HibernateProductDao dao = new HibernateProductDao(); // bunu yaparsam, calisir. ama ben dogru degil. ben buraya alternatif bir servisi entegre edemem.
 		
+		
+		
 		this.productDao.add(product); // hic bir sekilde hibernate'e bagimliligim yok
+		
+		this.loggerService.logToSystem("Urun eklendi " + product.getName());
 	}
 
 	@Override
@@ -48,4 +56,7 @@ public class ProductManager implements ProductService {
 
 // return => gordugu anda asagiya bakmaz. metodu bitirir.
 
+// J Logger'a dokunamiyorum. herhangi bir interface veremiyorum. dokunamiyorum. sadece cagirmak istiyorum. bunu ancak ve ancak 
+// new'leyerek yapabilirim. (KpsMernis sistemini newlemistik. Ayni onun gibi) adapter pattern ile implement etmek gerekir.
+// Loglama her projede kullanildigin icin yeri core katmani.
 

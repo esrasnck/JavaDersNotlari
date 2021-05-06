@@ -1,5 +1,7 @@
 eclipse.preferences.version=1
 encoding//src/nLayerdDemo/business/concretes/ProductManager.java=UTF-8
+encoding//src/nLayerdDemo/core/JLoggerManagerAdapter.java=UTF-8
 encoding//src/nLayerdDemo/dataAccess/abstracts/ProductDao.java=UTF-8
 encoding//src/nLayerdDemo/dataAccess/concretes/HibernateProductDao.java=UTF-8
 encoding//src/nLayerdDemo/entities/concretes/Product.java=UTF-8
+encoding//src/nLayerdDemo/jLogger/JLoggerManager.java=UTF-8
